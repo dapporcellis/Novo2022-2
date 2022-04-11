@@ -41,7 +41,6 @@ async function edt(req, res) {
 }
 
 async function list(req, res) {
-  console.log(Curso);
   let cursos = await Curso.findAll();
   res.render("curso/index.ejs", { Cursos: cursos });
 }
