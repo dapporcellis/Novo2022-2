@@ -16,7 +16,7 @@ async function add(req, res) {
     datainicio,
     logo,
   }).then((curso) => {
-    res.redirect("/");
+    res.redirect("/curso");
   });
 }
 
@@ -37,10 +37,11 @@ async function edt(req, res) {
     curso.logo = req.file.filename;
   }
   await curso.save();
-  res.redirect("/");
+  res.redirect("/curso");
 }
 
 async function list(req, res) {
+  console.log(Curso);
   let cursos = await Curso.findAll();
   res.render("curso/index.ejs", { Cursos: cursos });
 }
@@ -57,7 +58,7 @@ async function listfiltro(req, res) {
 async function del(req, res) {
   let curso = await Curso.findByPk(req.params.id);
   await curso.destroy();
-  res.redirect("/");
+  res.redirect("/curso");
 }
 
 module.exports = { abreadd, add, list, listfiltro, abreedt, edt, del };

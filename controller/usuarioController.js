@@ -9,7 +9,7 @@ async function add(req, res) {
   const { nome, email, senha } = req.body;
   const foto = req.file.filename;
   await Usuario.create({ nome, email, senha, foto }).then((usuario) => {
-    res.redirect("/");
+    res.redirect("/usuario");
   });
 }
 
@@ -28,7 +28,7 @@ async function edt(req, res) {
     usuario.foto = req.file.filename;
   }
   await usuario.save();
-  res.redirect("/");
+  res.redirect("/usuario");
 }
 
 async function list(req, res) {
@@ -47,7 +47,7 @@ async function listfiltro(req, res) {
 async function del(req, res) {
   let usuario = await Usuario.findByPk(req.params.id);
   await usuario.destroy();
-  res.redirect("/");
+  res.redirect("/usuario");
 }
 
 module.exports = { abreadd, add, list, listfiltro, abreedt, edt, del };
