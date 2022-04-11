@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editando Usuário</title>
+    <title>Editando Curso</title>
 </head>
 <body>
     <form method="post" enctype="multipart/form-data">
-        Nome: <input value="<%=usuario.nome%>" type="text" name="nome" placeholder="Digite seu nome!"><br>
-        Email: <input value="<%=usuario.email%>" type="email" name="email" placeholder="Digite seu email!"><br>
-        Senha: <input value="<%=usuario.senha%>" type="password" name="senha" placeholder="Digite sua senha!"><br>
-        Foto: <input type="file" name="foto"><br>
+        Título: <input type="text" name="titulo" 
+            placeholder="Digite o título do curso." value="<%=curso.titulo%>"><br>
+
+        Descrição: <input type="text" name="descricao" 
+            placeholder="Digite a descriçao do curso." value="<%=curso.descricao%>"><br>
+
+        Carga horaria: <input type="text" name="cargahoraria" 
+            placeholder="Digite sua senha!" value="<%=curso.cargahoraria%>"><br>
+            
+        Data de início: <input type="date" name="datainicio" 
+            placeholder="Digite sua senha!" value="<%=curso.datainicio%>"><br>
+                
+        Logo: <input type="file" name="logo"><br>
         <input type="submit" value="Enviar">
     </form>
 </body>

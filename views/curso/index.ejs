@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listagem dos usuários</title>
+    <title>Listagem dos cursos</title>
 </head>
 <body>
     <h1>Listagem de usuários</h1>
@@ -18,28 +18,28 @@
     <table>
         <tr>
             <th>Id</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Senha</th>
-            <th>Foto</th>
+            <th>Título</th>
+            <th>Carga horaria</th>
+            <th>Data de inicio</th>
+            <th>Logo</th>
             <th>Editar</th>
             <th>Excluir</th>
         </tr>
-        <% Usuarios.forEach((usuario)=>{ %>
+        <% Cursos.forEach((curso)=>{ %>
         <tr>
-            <td><%=usuario.id%></td>
-            <td><%=usuario.nome%></td>
-            <td><%=usuario.email%></td>
-            <td><%=usuario.senha%></td>
+            <td><%=curso.id%></td>
+            <td><%=curso.titulo%></td>
+            <td><%=curso.cargahoraria%></td>
+            <td><%=curso.datainicio%></td>
             <td>
-                <img src="/fotos/<%=usuario.foto%>" 
-                    width="80px" alt="foto do usuário">
+                <img src="/fotos/<%=curso.logo%>" 
+                    width="80px" alt="Logo do curso">
             </td>
             <td>
-                <a href="/edt/<%=usuario.id%>">Editar</a>
+                <a href="/edt/<%=curso.id%>">Editar</a>
             </td>
             <td>
-                <a href="/del/<%=usuario.id%>">Deletar</a>
+                <a href="/del/<%=curso.id%>">Deletar</a>
             </td>
         </tr>
         <% }) %>
